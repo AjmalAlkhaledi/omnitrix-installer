@@ -59,7 +59,7 @@ final class NewCommand extends Command
         $this->addArgument('name', InputArgument::REQUIRED, 'Directory of the new application')
             ->addOption('dev', null, InputOption::VALUE_NONE, 'Install the latest development version')
             ->addOption('composer', null, InputOption::VALUE_REQUIRED, 'Path to the Composer executable')
-            ->addOption('repository', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Extra Composer repository for the skeleton and its dependencies (added to the new project)')
+            ->addOption('repository', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Extra Composer repository for the application template and its dependencies (added to the new project)')
             ->addOption('skip-requirements', null, InputOption::VALUE_NONE, 'Create the project even if the platform check fails');
     }
 
