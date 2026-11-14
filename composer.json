@@ -1,0 +1,44 @@
+{
+    "name": "omnitrix/installer",
+    "description": "Creates new Omnitrix applications: omnitrix new my-api",
+    "type": "project",
+    "license": "MIT",
+    "keywords": ["omnitrix", "installer", "cli"],
+    "authors": [
+        {
+            "name": "Ajmal Alkhaledi",
+            "email": "ajmalalkhaledi@gmail.com",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "symfony/console": "^7.4",
+        "symfony/process": "^7.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.3",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": { "Omnitrix\\Installer\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Omnitrix\\Installer\\Tests\\": "tests/" }
+    },
+    "bin": ["bin/omnitrix"],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": false
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "lint": "php-cs-fixer check --diff",
+        "stan": "phpstan analyse",
+        "test": "phpunit",
+        "check": ["@composer validate --strict", "@lint", "@stan", "@test"]
+    }
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Omnitrix\Installer\NewCommand;
+use Symfony\Component\Console\Application;
+
+foreach ([__DIR__ . '/../vendor/autoload.php', __DIR__ . '/../../../autoload.php'] as $autoload) {
+    if (is_file($autoload)) {
+        require $autoload;
+        break;
+    }
+}
+
+$application = new Application('Omnitrix Installer', NewCommand::VERSION);
+$application->addCommand(new NewCommand());
+exit($application->run());
