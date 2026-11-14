@@ -1,9 +1,13 @@
 {
     "name": "omnitrix/installer",
     "description": "Creates new Omnitrix applications: omnitrix new my-api",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
-    "keywords": ["omnitrix", "installer", "cli"],
+    "keywords": [
+        "omnitrix",
+        "installer",
+        "cli"
+    ],
     "authors": [
         {
             "name": "Ajmal Alkhaledi",
@@ -23,12 +27,18 @@
         "phpunit/phpunit": "^12.5"
     },
     "autoload": {
-        "psr-4": { "Omnitrix\\Installer\\": "src/" }
+        "psr-4": {
+            "Omnitrix\\Installer\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Omnitrix\\Installer\\Tests\\": "tests/" }
+        "psr-4": {
+            "Omnitrix\\Installer\\Tests\\": "tests/"
+        }
     },
-    "bin": ["bin/omnitrix"],
+    "bin": [
+        "bin/omnitrix"
+    ],
     "config": {
         "sort-packages": true,
         "allow-plugins": false
@@ -39,6 +49,11 @@
         "lint": "php-cs-fixer check --diff",
         "stan": "phpstan analyse",
         "test": "phpunit",
-        "check": ["@composer validate --strict", "@lint", "@stan", "@test"]
+        "check": [
+            "@composer validate --strict",
+            "@lint",
+            "@stan",
+            "@test"
+        ]
     }
 }
